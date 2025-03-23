@@ -47,13 +47,13 @@ public class SubmarineManager : MonoBehaviour
             enabled = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.D))
         {
             _thrust_right = true;
             resetted = false;
         }
 
-        else if (Input.GetKey(KeyCode.W))
+        else if (Input.GetKey(KeyCode.D))
         {
             Vector3 dest = new Vector3(0, ship.transform.localRotation.eulerAngles.y,
             maxRotaion);
@@ -61,18 +61,18 @@ public class SubmarineManager : MonoBehaviour
             Quaternion.Euler(dest), Time.deltaTime * pitchSpeed);
         }
 
-        else if (Input.GetKeyUp(KeyCode.W))
+        else if (Input.GetKeyUp(KeyCode.D))
         {
             _thrust_right = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.A))
         {
             _thrust_left = true;
             resetted = false;
         }
 
-        else if (Input.GetKey(KeyCode.S))
+        else if (Input.GetKey(KeyCode.A))
         {
             Vector3 dest = new Vector3(0, ship.transform.localRotation.eulerAngles.y,
             minRotation);
@@ -80,7 +80,7 @@ public class SubmarineManager : MonoBehaviour
             Quaternion.Euler(dest), Time.deltaTime * pitchSpeed);
         }
 
-        else if (Input.GetKeyUp(KeyCode.S))
+        else if (Input.GetKeyUp(KeyCode.A))
         {
             _thrust_left = false;
         }
